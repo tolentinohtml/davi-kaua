@@ -5,9 +5,9 @@ public static class PlayerOM
 {
     private static Dictionary<int, int> coinCounts = new Dictionary<int, int>();
 
-    // Eventos (Observer)
-    public static event Action<int, int> OnCoinCountChanged; // (playerID, totalMoedas)
-    public static event Action<int> OnPlayerWon;            // (winnerPlayerID)
+  
+    public static event Action<int, int> OnCoinCountChanged; 
+    public static event Action<int> OnPlayerWon;            
 
     public static void ResetScores()
     {

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 185705918}
   - component: {fileID: 185705917}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: vencedorpanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.95441294, b: 0, a: 0.3254902}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78039217}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 740807778}
   - component: {fileID: 740807777}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: textop1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163, y: -47}
+  m_AnchoredPosition: {x: -163, y: -68}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740807777
@@ -581,7 +581,7 @@ MonoBehaviour:
   p2ScoreText: {fileID: 1747208820}
   winnerPanel: {fileID: 185705915}
   winnerText: {fileID: 1064980549}
-  targetScore: 6
+  targetScore: 5
 --- !u!1 &1064980548
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +708,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064980548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 75}
+  m_LocalPosition: {x: 0, y: 0, z: 291}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -716,7 +716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46, y: 0}
+  m_AnchoredPosition: {x: 46, y: 92}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1747208819
@@ -731,7 +731,7 @@ GameObject:
   - component: {fileID: 1747208821}
   - component: {fileID: 1747208820}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: textop2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
