@@ -8,13 +8,9 @@ namespace StarterAssets
     [RequireComponent(typeof(PlayerInput))]
     public class ThirdPersonController : MonoBehaviour
     {
-        #region Inspector Fields
-
-        [Header("Player Settings")]
         public int PlayerID = 1;
         public bool IsRespawning { get; set; } = false;
 
-        [Header("Movement & Physics")]
         public float MoveSpeed = 2.0f;
         public float SprintSpeed = 5.335f;
         public float SpeedBoostPerCoin = 0.5f;
@@ -25,24 +21,17 @@ namespace StarterAssets
         public float JumpTimeout = 0.50f;
         public float FallTimeout = 0.15f;
 
-        [Header("Grounded Settings")]
         public bool Grounded = true;
         public float GroundedOffset = -0.14f;
         public float GroundedRadius = 0.28f;
         public LayerMask GroundLayers;
 
-        [Header("Audio")]
         public AudioClip LandingAudioClip;
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
-        [Header("Camera & References")]
         public Transform playerCameraTransform;
         public GameObject CinemachineCameraTarget;
-
-        #endregion
-
-        #region Private Fields
 
         private float _speed;
         private float _animationBlend;
@@ -68,10 +57,6 @@ namespace StarterAssets
         private PlayerInput _playerInput;
 
         private bool _hasAnimator;
-
-        #endregion
-
-        #region Unity LifeCycle
 
         private void Start()
         {
@@ -121,10 +106,6 @@ namespace StarterAssets
             }
         }
 
-        #endregion
-
-        #region Public Methods
-
         public void ApplySpeedBoost()
         {
             MoveSpeed += SpeedBoostPerCoin;
@@ -138,10 +119,6 @@ namespace StarterAssets
                 CinemachineCameraTarget.transform.rotation = Quaternion.Euler(0f, targetYaw, 0f);
             }
         }
-
-        #endregion
-
-        #region Movement & Physics Logic
 
         private void Move()
         {
@@ -251,10 +228,6 @@ namespace StarterAssets
             }
         }
 
-        #endregion
-
-        #region Input Handlers
-
         private Vector2 GetMoveInput()
         {
             if (_playerInput != null && _playerInput.actions != null && _playerInput.actions.FindAction("Move") != null)
@@ -282,10 +255,6 @@ namespace StarterAssets
             return _input != null && _input.jump;
         }
 
-        #endregion
-
-        #region Animation & Audio Callbacks
-
         private void AssignAnimationIDs()
         {
             _animIDSpeed = Animator.StringToHash("Speed");
@@ -311,7 +280,5 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
-
-        #endregion
     }
 }

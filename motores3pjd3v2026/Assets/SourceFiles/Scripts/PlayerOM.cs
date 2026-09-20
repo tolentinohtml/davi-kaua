@@ -3,16 +3,35 @@ using System.Collections.Generic;
 
 public static class PlayerOM
 {
+    private static Dictionary<int, int> starCounts = new Dictionary<int, int>();
     private static Dictionary<int, int> coinCounts = new Dictionary<int, int>();
 
-  
-    public static event Action<int, int> OnCoinCountChanged; 
-    public static event Action<int> OnPlayerWon;            
+    public static event Action<int, int> OnStarCountChanged;
+    public static event Action<int, int> OnCoinCountChanged;
+    public static event Action<int> OnPlayerWon;
 
     public static void ResetScores()
     {
+        starCounts[1] = 0;
+        starCounts[2] = 0;
         coinCounts[1] = 0;
         coinCounts[2] = 0;
+    }
+
+    public static void AddStar(int playerID, int amount = 1)
+    {
+        if (!starCounts.ContainsKey(playerID))
+        {
+            starCounts[playerID] = 0;
+        }
+
+        starCounts[playerID] += amount;
+        OnStarCountChanged?.Invoke(playerID, starCounts[playerID]);
+    }
+
+    public static int GetStars(int playerID)
+    {
+        return starCounts.ContainsKey(playerID) ? starCounts[playerID] : 0;
     }
 
     public static void AddCoin(int playerID, int amount = 1)
